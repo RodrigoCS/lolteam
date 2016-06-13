@@ -52,7 +52,7 @@ class AuthController extends Controller
             'name' => 'required|max:255',
             'lastname' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
-            'summoner' => 'required|unique:users',
+            'summoner' => 'required|unique:users', 
             'region' => 'required',
             'password' => 'required|min:6|confirmed',
         ]);
@@ -71,7 +71,7 @@ class AuthController extends Controller
             'name' => $data['name'],
             'lastname' => $data['lastname'],
             'email' => $data['email'],
-            'summoner' => $data['summoner'],
+            'summoner' =>  mb_strtolower(str_replace(' ', '', $data['summoner']), 'UTF-8'),
             'region' => $data['region'],
             'password' => bcrypt($data['password']),
         ]);
