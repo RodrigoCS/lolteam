@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
+                <div class="panel-heading">Registerx</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}
@@ -19,6 +19,49 @@
                                 @if ($errors->has('name'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group{{ $errors->has('lastname') ? ' has-error' : '' }}">
+                            <label for="lastname" class="col-md-4 control-label">Last Name</label>
+
+                            <div class="col-md-6">
+                                <input id="lastname" type="text" class="form-control" name="lastname" value="{{ old('lastname') }}">
+
+                                @if ($errors->has('lastname'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('lastname') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group{{ $errors->has('summoner') ? ' has-error' : '' }}">
+                            <label for="summoner" class="col-md-4 control-label">Summoner Name</label>
+
+                            <div class="col-md-6">
+                                <input id="summoner" type="text" class="form-control" name="summoner" value="{{ old('summoner') }}">
+
+                                @if ($errors->has('summoner'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('summoner') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('region') ? ' has-error' : '' }}">
+                            <label for="region" class="col-md-4 control-label">Region</label>
+
+                            <div class="col-md-6">
+                                <select id="region" type="text" class="form-control" name="region">
+                                    <option value="lan">LAN</option>
+                                    <option value="lan">LAS</option>
+                                    <option value="lan">NA</option>
+                                </select>
+                                @if ($errors->has('region'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('region') }}</strong>
                                     </span>
                                 @endif
                             </div>

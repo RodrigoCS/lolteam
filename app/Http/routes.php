@@ -16,5 +16,14 @@ Route::get('/', function () {
 });
 
 Route::auth();
-
 Route::get('/home', 'HomeController@index');
+
+
+Route::get('/summoner','SummonerController@summoner');
+
+
+//DEV 
+Route::get('/flush', function(){ //FLUSHES SESSIONS
+	Session::flush();
+	return redirect()->back();
+});
