@@ -12,7 +12,7 @@
                     <div class="media">
                       <div class="media-left">
                         <a href="#">
-                          <img class="media-object img-thumbnail" src="{{ asset('/assets/images/profileIcons/profileIcon'.$summoner->profileIconId.'.jpg') }}" alt="{{ $summoner->name }}">
+                          <img class="media-object img-thumbnail" src="{{ asset('/lolteam/assets/images/profileIcons/profileIcon'.$summoner->profileIconId.'.jpg') }}" alt="{{ $summoner->name }}">
                         </a>
                       </div>
                       <div class="media-body">
