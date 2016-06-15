@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Summoner: {{ $summoner->name }}</div>
+                <div class="panel-heading">Summoner: {{ $summoner->id }}</div>
 
                 <div class="panel-body">
 
@@ -35,6 +35,35 @@
                 </div>
             </div>
         </div>
+
+        @foreach($matches as $match)
+            <div class="col-md-10 col-md-offset-1">
+                <div class="panel panel-default">
+                    <div class="panel-heading">{{ $match->queue }}</div>
+
+                    <div class="panel-body">
+
+                        <div class="media">
+                          <div class="media-left">
+                            <a href="#">
+                              
+                            </a>
+                          </div>
+                          <div class="media-body">
+                            <h4 class="media-heading">{{ $summoner->name }} <span class="summoner_tag">{{Auth::user()->club_tag}}</span></h4>
+                            {{ $match->lane }}
+                            <div>
+                                {{ $match->champion }}
+                            </div>
+                          </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        @endforeach
     </div>
+
+       
 </div>
 @endsection
