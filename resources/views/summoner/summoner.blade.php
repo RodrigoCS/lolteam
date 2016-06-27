@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.new')
 
 @section('content')
 <div class="container">
@@ -36,32 +36,35 @@
             </div>
         </div>
 
-        @foreach($matches as $match)
-            <div class="col-md-10 col-md-offset-1">
-                <div class="panel panel-default">
-                    <div class="panel-heading">{{ $match->queue }}</div>
+        <!--MATCHES-->
+        <section id="matches">
+            @foreach($matches as $match)
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">{{ $match->queue }}</div>
 
-                    <div class="panel-body">
+                        <div class="panel-body">
 
-                        <div class="media">
-                          <div class="media-left">
-                            <a href="#">
-                              
-                            </a>
-                          </div>
-                          <div class="media-body">
-                            <h4 class="media-heading">{{ $summoner->name }} <span class="summoner_tag">{{Auth::user()->club_tag}}</span></h4>
-                            {{ $match->lane }}
-                            <div>
-                                {{ $match->champion }}
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img width="60px" class="media-object img-thumbnail" src="{{ asset('/lolteam/assets/images/champions/'.str_replace("'", "", $match->champion).'.png') }}" alt="{{ $match->champion }}">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading">{{ $summoner->name }} <span class="summoner_tag">{{Auth::user()->club_tag}}</span></h4>
+                                {{ $match->lane }}
+                                <div>
+                                    {{ $match->champion }}
+                                </div>
+                              </div>
                             </div>
-                          </div>
-                        </div>
 
+                        </div>
                     </div>
                 </div>
-            </div>
-        @endforeach
+            @endforeach
+        </section>
     </div>
 
        

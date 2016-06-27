@@ -1,5 +1,100 @@
 /*style.css*/
 
+@font-face {
+    font-family: 'Beaufort for LOL'; /*a name to be used later*/
+    src: url('../fonts/BeaufortforLOL-Bold.otf'); /*URL to font*/
+}
+
+body {
+	    background: url('../images/bg.jpg');
+    background-position: center top;
+    /*background-size: 100%;*/
+    background-attachment: fixed;
+}
+
 span.summoner_tag {
     color: #ff8f4a;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    font-family: "Beaufort for LOL";
+}
+.navbar-brand, .navbar-default .navbar-nav>li>a {
+	    font-family: "Beaufort for LOL";
+	    color:#929598;
+}
+
+.navbar-brand, .navbar-default .navbar-nav>li>a:hover {
+	    font-family: "Beaufort for LOL";
+	    color:#d2bb92;
+}
+
+.navbar-default {
+    background-color: transparent;
+    border-bottom: 2px solid #6d5a3a;
+        margin-bottom: 5px;
+}
+.content-wrap{
+	border-top: 1px solid #5f5e5a;
+	padding-top: 15px;
+}
+
+.panel {
+    margin-bottom: 20px;
+    background-color: transparent;
+    border: 0;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    color: #fff;
+}
+
+.panel-default>.panel-heading {
+	font-family: "Beaufort for LOL";
+	color: #ecebd7;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand, .navbar-default .navbar-brand:hover {
+    color: #d6b57e;
+    background-color: transparent;
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    color: #d6b57e;
+    background-color: rgba(255, 255, 255, 0.07);
+}
+
+ul.dropdown-menu {
+    background: rgba(0, 10, 19, 0.69);
+    border-radius: 0px;
+    border: 1px solid #6d5a3a;
+}
+.dropdown-menu>li>a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #9b9b9b;
+    white-space: nowrap;
+}
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+    color: #001721;
+    text-decoration: none;
+    background-color: rgb(109, 90, 58);
+}
+.panel.panel-default {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+}
+
+.img-thumbnail {
+    border-color: #755d35;
+    background-color: #a68754;
+}
+
+.panel-body {
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.51);
 }

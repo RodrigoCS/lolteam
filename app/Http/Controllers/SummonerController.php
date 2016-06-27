@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Auth;
-
+Use App\Champion;
 
 
 function summoner_info_array_name($summoner) {
@@ -49,14 +49,31 @@ class SummonerController extends Controller
         return $matchList;
     }
 
-
+    public function getChampionName($championId) {
+        $champion = Champion::find($championId);
+        return $champion->name;
+    }
 
     public function mySummoner(Request $request) {
         $summonerName = Auth::user()->summoner;
         $summoner = $this->getSummonerByName($summonerName);
         $leagueEntry = $this->getLeagueEntry($summoner->{'id'});
         $matches = $this->getMatchlist($summoner->{'id'}, 6)->matches;
+        foreach ($matches as $match) {
+            $match->champion = $this->getChampionName($match->champion);
+            $match->info = $this->getMatch($match->matchId);
+            //dd($match);
+            //dd($this->getMatch($match->matchId)); 
+        }
         return view('summoner/summoner', ['summoner' => $summoner, 'leagueEntry' => $leagueEntry, 'matches' => $matches]);
+    }
+
+
+    public function getMatch($matchId){
+        $url = 'https://'.$this->region.'.api.pvp.net/api/lol/'.$this->region.'/v2.2/match/'.$matchId.'?api_key='.$this->apiKey;
+        $response = file_get_contents($url);
+        $match =  json_decode($response);
+        return $match;
     }
 
 

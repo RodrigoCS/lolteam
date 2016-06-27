@@ -43,3 +43,9 @@ Route::get('/static/seed/champions', function(){
     }
     return redirect()->to('/');
 });
+
+Route::get('/request/api', function(){
+    $url = 'https://lan.api.pvp.net/api/lol/lan/v1.4/summoner/by-name/kc%C3%B3R?api_key=844dbefd-2dcc-420c-9f3a-4095fde86813';
+    $request = $request->url($url);
+    dd();
+});
